@@ -1,0 +1,104 @@
+_format_version: "1.1"
+_konnect:
+  runtime_group_name: rg-dev
+services:
+- connect_timeout: 60000
+  host: mockbin.org
+  name: Booking_Service_v1
+  path: /
+  port: 80
+  protocol: http
+  read_timeout: 60000
+  retries: 5
+  routes:
+  - https_redirect_status_code: 426
+    methods:
+    - GET
+    name: Booking_v1
+    path_handling: v0
+    paths:
+    - /v1/booking
+    preserve_host: false
+    protocols:
+    - http
+    - https
+    regex_priority: 0
+    strip_path: true
+  tags:
+  - _KonnectService:Booking_Service
+  write_timeout: 60000
+- connect_timeout: 60000
+  host: mockbin.org
+  name: Check_In_v1
+  path: /
+  port: 80
+  protocol: http
+  read_timeout: 60000
+  retries: 5
+  routes:
+  - https_redirect_status_code: 426
+    methods:
+    - GET
+    name: Check_In_v1
+    path_handling: v0
+    paths:
+    - /v1/check-in
+    preserve_host: false
+    protocols:
+    - http
+    - https
+    regex_priority: 0
+    strip_path: true
+  tags:
+  - _KonnectService:Check_In_Service
+  write_timeout: 60000
+- connect_timeout: 60000
+  host: mockbin.org
+  name: Seat_Map_v1
+  path: /
+  port: 80
+  protocol: http
+  read_timeout: 60000
+  retries: 5
+  routes:
+  - https_redirect_status_code: 426
+    methods:
+    - GET
+    name: Seat_Map_v1
+    path_handling: v0
+    paths:
+    - /v1/seat-map
+    preserve_host: false
+    protocols:
+    - http
+    - https
+    regex_priority: 0
+    strip_path: true
+  tags:
+  - _KonnectService:Seat_Map_Service
+  write_timeout: 60000
+- connect_timeout: 60000
+  host: mockbin.org
+  name: Seat_Map_v2
+  path: /
+  port: 80
+  protocol: http
+  read_timeout: 60000
+  retries: 5
+  routes:
+  - https_redirect_status_code: 426
+    methods:
+    - GET
+    name: Seat_Map_v2
+    path_handling: v0
+    paths:
+    - /v2/seat-map
+    preserve_host: false
+    protocols:
+    - http
+    - https
+    regex_priority: 0
+    strip_path: true
+  tags:
+  - _KonnectService:Seat_Map_Service
+  write_timeout: 60000
